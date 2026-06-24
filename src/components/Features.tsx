@@ -62,7 +62,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-orange-500 to-red-600" />
 
@@ -94,7 +94,7 @@ const Features = () => {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature, i) => (
             <motion.div
               key={i}

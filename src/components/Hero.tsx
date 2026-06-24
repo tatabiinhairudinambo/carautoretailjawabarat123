@@ -123,7 +123,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="grid grid-cols-3 gap-4 max-w-xl mx-auto"
+          className="grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto"
         >
           {stats.map((stat, i) => (
             <motion.div
@@ -131,9 +131,9 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -4 }}
               className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-4 py-4 cursor-default"
             >
-              <stat.icon size={18} className="text-red-500 mx-auto mb-2" />
-              <p className="text-2xl sm:text-3xl font-bold text-white font-display">{stat.value}</p>
-              <p className="text-gray-400 text-xs mt-1">{stat.label}</p>
+              <stat.icon size={16} className="text-red-500 mx-auto mb-1.5" />
+              <p className="text-xl sm:text-2xl font-bold text-white font-display">{stat.value}</p>
+              <p className="text-gray-400 text-[10px] sm:text-xs mt-0.5 leading-tight">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -11,7 +11,7 @@ const badges = [
 const CTASection = () => {
   const handleWhatsApp = () => {
     const msg = 'Halo, saya ingin booking mobil. Mohon info lebih lanjut.';
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/6282213840415?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   const scrollToCatalog = () => {
@@ -19,7 +19,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-black relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-black relative overflow-hidden">
       {/* Glow accents */}
       <div className="absolute -top-32 -right-32 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -89,7 +89,7 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 sm:gap-x-6"
           >
             {badges.map((badge, i) => (
               <div key={i} className="flex items-center gap-1.5 text-sm text-gray-500">

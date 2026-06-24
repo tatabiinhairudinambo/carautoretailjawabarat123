@@ -10,7 +10,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Halo, saya ${formData.name}%0A%0ATelepon: ${formData.phone}%0A%0APesan: ${formData.message}`;
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+    window.open(`https://wa.me/6282213840415?text=${msg}`, '_blank');
     setFormData({ name: '', phone: '', message: '' });
   };
 
@@ -22,7 +22,7 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Telepon',
-      value: '+62 812-3456-7890',
+      value: '+62 822-1384-0415',
       sub: 'Senin - Minggu, 09:00 - 21:00',
       color: 'bg-green-600',
     },
@@ -36,14 +36,14 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Alamat',
-      value: 'Jl. Sudirman No. 123',
-      sub: 'Jakarta Selatan, DKI Jakarta 12190',
+      value: 'Perumahan Grand Mutiara 2, Blok B1 No.1',
+      sub: 'Cileungsi, Kabupaten Bogor, Jawa Barat 16820',
       color: 'bg-red-600',
     },
   ];
 
   return (
-    <section id="kontak" className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="kontak" className="py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
       {/* Top accent */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-orange-500 to-red-600" />
 
@@ -54,7 +54,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
@@ -73,11 +73,11 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Left */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
@@ -114,26 +114,27 @@ const Contact = () => {
               className="rounded-2xl overflow-hidden shadow-lg border border-gray-100"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2087749585404!2d106.82070731476889!3d-6.236690995480827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sen!2sid!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0!2d107.0224714!3d-6.4271075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6997398a05d593%3A0x6bfa820c2554a0e5!2sDayat%20Homework!5e0!3m2!1sid!2sid!4v1234567890"
                 width="100%"
-                height="220"
-                style={{ border: 0 }}
+                height="240"
+                style={{ border: 0, display: 'block' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Lokasi Showroom"
+                className="w-full"
               />
             </motion.div>
           </motion.div>
 
           {/* Right - Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
               <h4 className="text-xl font-bold text-gray-900 mb-6 font-display flex items-center gap-2">
                 <MessageCircle size={22} className="text-red-600" />
                 Kirim Pesan

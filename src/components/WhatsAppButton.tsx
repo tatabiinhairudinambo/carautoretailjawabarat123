@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    const phoneNumber = '6281234567890';
+    const phoneNumber = '6282213840415';
     const message = 'Halo, saya ingin rental mobil. Mohon informasinya tentang ketersediaan unit dan harga.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');

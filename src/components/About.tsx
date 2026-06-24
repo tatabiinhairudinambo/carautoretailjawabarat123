@@ -26,7 +26,7 @@ const About = () => {
   };
 
   return (
-    <section id="tentang" className="py-24 bg-white relative overflow-hidden">
+    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, black 1px, transparent 0)',
@@ -40,7 +40,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
@@ -61,11 +61,11 @@ const About = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-14 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mb-10 sm:mb-16">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 0, y: 30 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
@@ -74,7 +74,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80"
                 alt="Rental Mobil + Driver"
-                className="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[280px] sm:h-[380px] lg:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -111,8 +111,8 @@ const About = () => {
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 0, y: 30 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2"

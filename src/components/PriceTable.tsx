@@ -8,11 +8,11 @@ const PriceTable = () => {
 
   const handleWhatsApp = (carName: string, price: number) => {
     const msg = `Halo, saya tertarik rental mobil ${carName} seharga ${formatPrice(price)}/Hari. Mohon info lebih lanjut.`;
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/6282213840415?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
-    <section id="harga" className="py-24 bg-gray-900 text-white relative overflow-hidden">
+    <section id="harga" className="py-16 sm:py-20 lg:py-24 bg-gray-900 text-white relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
@@ -131,8 +131,8 @@ const PriceTable = () => {
               className="bg-gray-800/60 rounded-2xl overflow-hidden border border-gray-700/50"
             >
               <div className="flex gap-4 p-4">
-                <div className="w-24 h-18 rounded-xl overflow-hidden flex-shrink-0 bg-gray-700">
-                  <img src={car.image} alt={car.name} className="w-24 h-20 object-cover" />
+                <div className="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-700">
+                  <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-white mb-0.5 truncate text-sm">{car.name}</h4>
@@ -171,7 +171,7 @@ const PriceTable = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-8 bg-gradient-to-r from-red-600/10 to-orange-600/10 border border-red-600/20 rounded-2xl p-6 flex items-center gap-4"
+          className="mt-8 bg-gradient-to-r from-red-600/10 to-orange-600/10 border border-red-600/20 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
         >
           <div className="w-10 h-10 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
             <TrendingDown size={20} className="text-red-400" />
