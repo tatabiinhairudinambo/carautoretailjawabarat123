@@ -73,7 +73,7 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}

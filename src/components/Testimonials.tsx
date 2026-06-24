@@ -4,7 +4,7 @@ import { testimonials } from '../data/testimonials';
 
 const Testimonials = () => {
   return (
-    <section id="testimoni" className="py-24 bg-white relative overflow-hidden">
+    <section id="testimoni" className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-60" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-60" />
@@ -16,7 +16,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
@@ -103,7 +103,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-14 text-center"
+          className="mt-10 sm:mt-14 text-center"
         >
           <p className="text-gray-500 mb-5 text-sm">
             Bergabunglah dengan ribuan pelanggan yang puas rental mobil bersama kami

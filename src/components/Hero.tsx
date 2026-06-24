@@ -44,7 +44,7 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-20 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -129,7 +129,7 @@ const Hero = () => {
             <motion.div
               key={i}
               whileHover={{ scale: 1.05, y: -4 }}
-              className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-4 py-4 cursor-default"
+              className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-2 py-3 sm:px-4 sm:py-4 cursor-default"
             >
               <stat.icon size={16} className="text-red-500 mx-auto mb-1.5" />
               <p className="text-xl sm:text-2xl font-bold text-white font-display">{stat.value}</p>
