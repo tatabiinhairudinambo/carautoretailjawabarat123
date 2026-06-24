@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Car Retail Indonesia - Rental Mobil
 
-# Run and deploy your AI Studio app
+Website Landing Page modern dan profesional untuk layanan rental mobil Car Retail Indonesia.
 
-This contains everything you need to run your app locally.
+## Fitur
 
-View your app in AI Studio: https://ai.studio/apps/562da118-9e2d-42e9-8313-f2cab025c65f
+- 🚗 Daftar kendaraan rental lengkap
+- 💰 Harga rental transparan
+- 📱 Responsive design (Mobile & Desktop)
+- ⚡ Fast loading & SEO friendly
+- 💬 WhatsApp direct booking
+- 🔍 Search & filter mobil
+- ⭐ Testimoni pelanggan
+- 🎨 Animasi modern & smooth
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vite
+- Lucide React Icons
 
+## Cara Menjalankan
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+# Install dependencies
+npm install
+
+# Jalankan development server
+npm run dev
+
+# Build untuk production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Struktur Project
+
+```
+src/
+├── components/       # Komponen React
+├── data/            # Data mobil & testimoni
+├── types/           # TypeScript types
+├── App.tsx          # Main app component
+├── main.tsx         # Entry point
+└── index.css        # Global styles
+```
+
+## Kontak
+
+Car Retail Indonesia - Rental Mobil Terpercaya
+📍 Jakarta, Indonesia
+📱 WhatsApp: +62 812-3456-7890
+📧 Email: info@carretailindonesia.com

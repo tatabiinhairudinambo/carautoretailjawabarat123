@@ -1,119 +1,210 @@
-import { ShoppingBag, Soup, Sparkles, ShieldCheck } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-interface NavbarProps {
-  cartCount: number;
-  onOpenCart: () => void;
-  activeSection: 'menu' | 'orders' | 'admin';
-  onChangeSection: (section: 'menu' | 'orders' | 'admin') => void;
-}
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default function Navbar({
-  cartCount,
-  onOpenCart,
-  activeSection,
-  onChangeSection,
-}: NavbarProps) {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-xs">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-black/95 backdrop-blur-md shadow-lg'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div 
-            onClick={() => onChangeSection('menu')}
-            className="flex items-center gap-2 cursor-pointer group"
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex-shrink-0"
           >
-            <div className="bg-amber-500 text-white p-2 rounded-xl group-hover:scale-105 transition-transform">
-              <Soup className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="font-display font-bold text-xl tracking-tight text-slate-900 flex items-center gap-1">
-                Restoran <span className="text-amber-500">MBG</span>
-                <Sparkles className="w-4 h-4 text-amber-500 fill-amber-500" />
-              </span>
-              <p className="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Cita Rasa Nusantara</p>
-            </div>
-          </div>
+            <h1 className="text-2xl font-bold text-white font-display">
+              Car <span className="text-red-600">Retail</span>
+            </h1>
+            <p className="text-[10px] text-gray-400 -mt-1">INDONESIA</p>
+          </motion.div>
 
-          {/* Nav Links */}
-          <nav className="hidden md:flex space-x-1">
-            <button
-              onClick={() => onChangeSection('menu')}
-              className={`px-4 py-2 rounded-lg font-sans font-medium text-sm transition-colors ${
-                activeSection === 'menu'
-                  ? 'bg-amber-500 text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
+          {/* Desktop Menu */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="hidden md:flex items-center space-x-8"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05, color: '#ffffff' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('beranda')}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
-              Menu Kami
-            </button>
-            <button
-              onClick={() => onChangeSection('orders')}
-              className={`px-4 py-2 rounded-lg font-sans font-medium text-sm transition-colors ${
-                activeSection === 'orders'
-                  ? 'bg-amber-500 text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
+              Beranda
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, color: '#ffffff' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('tentang')}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
-              Lacak Pesanan
-            </button>
-            <button
-              onClick={() => onChangeSection('admin')}
-              className={`px-4 py-2 rounded-lg font-sans font-medium text-sm transition-colors flex items-center gap-1.5 ${
-                activeSection === 'admin'
-                  ? 'bg-slate-900 text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-1000 hover:bg-slate-100 hover:text-slate-900'
-              }`}
+              Tentang
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, color: '#ffffff' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('unit-mobil')}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              Simulasi Admin
-            </button>
-          </nav>
+              Armada
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, color: '#ffffff' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('harga')}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
+            >
+              Harga
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, color: '#ffffff' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('testimoni')}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
+            >
+              Testimoni
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('kontak')}
+              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors font-semibold hover-glow"
+            >
+              Hubungi Kami
+            </motion.button>
+          </motion.div>
 
-          {/* Right Side actions */}
-          <div className="flex items-center gap-3">
-            {/* Mobile Nav Link representation for easier switching */}
-            <div className="md:hidden flex gap-1">
-              <button
-                onClick={() => onChangeSection('orders')}
-                className={`p-2 rounded-lg text-sm transition-colors ${
-                  activeSection === 'orders'
-                    ? 'bg-amber-100 text-amber-700 font-semibold'
-                    : 'text-slate-600'
-                }`}
-                title="Lacak Pesanan"
-              >
-                Pesanan
-              </button>
-              <button
-                onClick={() => onChangeSection('admin')}
-                className={`p-2 rounded-lg text-sm transition-colors ${
-                  activeSection === 'admin'
-                    ? 'bg-slate-200 text-slate-800 font-semibold'
-                    : 'text-slate-600'
-                }`}
-                title="Simulasi Admin"
-              >
-                Admin
-              </button>
-            </div>
-
-            {/* Cart Button */}
-            <button
-              id="cart-button"
-              onClick={onOpenCart}
-              className="relative flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100/80 px-4 py-2 rounded-xl transition-all cursor-pointer font-medium active:scale-95"
-            >
-              <ShoppingBag className="w-5 h-5 text-amber-600" />
-              <span className="hidden sm:inline font-sans text-sm">Keranjang</span>
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-1 bg-amber-600 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-bounce">
-                  {cartCount}
-                </span>
-              )}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-white p-2"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
         </div>
       </div>
-    </header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/98 backdrop-blur-md border-t border-gray-800 overflow-hidden"
+          >
+            <div className="px-4 pt-2 pb-4 space-y-3">
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+                onClick={() => scrollToSection('beranda')}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Beranda
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15 }}
+                onClick={() => scrollToSection('tentang')}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Tentang
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                onClick={() => scrollToSection('unit-mobil')}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Armada
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25 }}
+                onClick={() => scrollToSection('harga')}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Harga
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                onClick={() => scrollToSection('testimoni')}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                Testimoni
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.35 }}
+                onClick={() => scrollToSection('kontak')}
+                className="block w-full text-left bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+              >
+                Hubungi Kami
+              </motion.button>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="pt-3 border-t border-gray-800 space-y-2"
+              >
+                <a
+                  href="tel:+6281234567890"
+                  className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors px-3 py-2"
+                >
+                  <Phone size={16} />
+                  <span className="text-sm">+62 812-3456-7890</span>
+                </a>
+                <a
+                  href="mailto:info@carretailindonesia.com"
+                  className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors px-3 py-2"
+                >
+                  <Mail size={16} />
+                  <span className="text-sm">info@carretailindonesia.com</span>
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
-}
+};
+
+export default Navbar;
