@@ -21,6 +21,7 @@ import Prices from './pages/admin/Prices';
 import TestimonialsList from './pages/admin/TestimonialsList';
 import AdminContacts from './pages/admin/Contacts';
 import AccountVerifications from './pages/admin/AccountVerifications';
+import VerificationForm from './pages/VerificationForm';
 import AdminLayout from './components/admin/AdminLayout';
 
 function LandingPage() {
@@ -58,6 +59,7 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/verifikasi-akun" element={<VerificationForm />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />

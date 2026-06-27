@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // SVG icons untuk sosial media (lucide deprecated)
 const SocialIcons = {
@@ -115,6 +116,15 @@ const Footer = () => {
                   </motion.button>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/verifikasi-akun"
+                  className="text-sm text-gray-500 hover:text-red-400 transition-all duration-200 flex items-center gap-1.5 group"
+                >
+                  <span className="w-1 h-1 bg-red-600/40 rounded-full group-hover:bg-red-500 transition-colors" />
+                  Verifikasi Akun
+                </Link>
+              </li>
             </ul>
           </motion.div>
 
