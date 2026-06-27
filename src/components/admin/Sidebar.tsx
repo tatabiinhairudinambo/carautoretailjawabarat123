@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Car, Star, MessageSquare, Tag, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Car, Star, MessageSquare, Tag, LogOut, Menu, X, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
@@ -8,6 +8,7 @@ const navItems = [
   { to: '/admin/cars', label: 'Kelola Mobil', icon: Car },
   { to: '/admin/testimonials', label: 'Testimoni', icon: Star },
   { to: '/admin/contacts', label: 'Pesan Masuk', icon: MessageSquare },
+  { to: '/admin/verifications', label: 'Verifikasi Akun', icon: ShieldCheck },
 ];
 
 interface SidebarProps {

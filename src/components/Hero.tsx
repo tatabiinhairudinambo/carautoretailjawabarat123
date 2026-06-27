@@ -5,10 +5,6 @@ const Hero = () => {
   const scrollToUnits = () => {
     document.getElementById('unit-mobil')?.scrollIntoView({ behavior: 'smooth' });
   };
-  const scrollToContact = () => {
-    document.getElementById('kontak')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const stats = [
     { value: '500+', label: 'Pelanggan Puas', icon: Star },
     { value: '50+', label: 'Unit Armada', icon: Shield },
@@ -24,7 +20,7 @@ const Hero = () => {
           alt="Hero Background"
           className="w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/75 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" />
         {/* Red accent overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-red-950/30 via-transparent to-transparent" />
       </div>
@@ -44,21 +40,7 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-20 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-400 px-5 py-2 rounded-full text-sm font-semibold mb-8 backdrop-blur-sm"
-        >
-          <motion.span
-            animate={{ scale: [1, 1.3, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-2 h-2 bg-red-500 rounded-full"
-          />
-          🚗 Rental Mobil Terpercaya Indonesia
-        </motion.div>
+<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-20 text-center">
 
         {/* Heading */}
         <motion.h1
@@ -108,14 +90,6 @@ const Hero = () => {
             <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform duration-300" />
           </motion.button>
 
-          <motion.button
-            whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.6)' }}
-            whileTap={{ scale: 0.97 }}
-            onClick={scrollToContact}
-            className="group bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white border border-white/25 px-8 py-4 rounded-xl font-bold text-base flex items-center gap-3 transition-all duration-300 w-full sm:w-auto justify-center"
-          >
-            Hubungi Admin
-          </motion.button>
         </motion.div>
 
         {/* Stats */}

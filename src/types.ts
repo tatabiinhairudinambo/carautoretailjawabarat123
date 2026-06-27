@@ -27,3 +27,13 @@ export interface ContactForm {
   phone: string;
   message: string;
 }
+
+export interface VerificationItem {
+  id: string;
+  name: string;
+  email: string;
+  ktp_number: string;
+  status: 'pending' | 'approved' | 'rejected';
+  created_at: string;
+  updated_at?: string;
+}

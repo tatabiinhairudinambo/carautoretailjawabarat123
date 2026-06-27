@@ -34,7 +34,7 @@ const CTASection = () => {
           viewport={{ once: true }}
         >
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -46,8 +46,8 @@ const CTASection = () => {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-2 h-2 bg-red-500 rounded-full"
             />
-            Tersedia 24/7 — Booking Sekarang
-          </motion.div>
+            Tersedia 24/7 &mdash; Booking Sekarang
+          </motion.div> */}
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 font-display leading-tight">

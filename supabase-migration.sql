@@ -107,3 +107,31 @@ DROP TRIGGER IF EXISTS update_cars_updated_at ON cars;
 CREATE TRIGGER update_cars_updated_at
   BEFORE UPDATE ON cars
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Account Verifications table
+CREATE TABLE IF NOT EXISTS account_verifications (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  ktp_number TEXT NOT NULL,
+  status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS for account_verifications
+ALTER TABLE account_verifications ENABLE ROW LEVEL SECURITY;
+
+-- Authenticated admin policies for account_verifications
+DROP POLICY IF EXISTS "Allow admin all account_verifications" ON account_verifications;
+CREATE POLICY "Allow admin select account_verifications" ON account_verifications FOR SELECT USING (auth.role() = 'authenticated');
+CREATE POLICY "Allow admin insert account_verifications" ON account_verifications FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+CREATE POLICY "Allow admin update account_verifications" ON account_verifications FOR UPDATE USING (auth.role() = 'authenticated') WITH CHECK (auth.role() = 'authenticated');
+CREATE POLICY "Allow admin delete account_verifications" ON account_verifications FOR DELETE USING (auth.role() = 'authenticated');
+CREATE POLICY "Allow public insert account_verifications" ON account_verifications FOR INSERT WITH CHECK (true);
+
+-- Auto-update updated_at trigger for account_verifications
+DROP TRIGGER IF EXISTS update_account_verifications_updated_at ON account_verifications;
+CREATE TRIGGER update_account_verifications_updated_at
+  BEFORE UPDATE ON account_verifications
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();

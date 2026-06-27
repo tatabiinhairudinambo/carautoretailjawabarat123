@@ -20,6 +20,7 @@ import CarForm from './pages/admin/CarForm';
 import Prices from './pages/admin/Prices';
 import TestimonialsList from './pages/admin/TestimonialsList';
 import AdminContacts from './pages/admin/Contacts';
+import AccountVerifications from './pages/admin/AccountVerifications';
 import AdminLayout from './components/admin/AdminLayout';
 
 function LandingPage() {
@@ -67,6 +68,7 @@ function App() {
           <Route path="prices" element={<Prices />} />
           <Route path="testimonials" element={<TestimonialsList />} />
           <Route path="contacts" element={<AdminContacts />} />
+          <Route path="verifications" element={<AccountVerifications />} />
         </Route>
       </Routes>
     </BrowserRouter>
