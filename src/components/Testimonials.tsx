@@ -106,9 +106,9 @@ const Testimonials = () => {
 
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                   <img
-                    src={t.avatar}
+                    src={t.avatar && t.avatar.startsWith('http') ? t.avatar : `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=dc2626&color=fff`}
                     alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-red-100"
+                    className="w-10 h-10 rounded-full object-cover ring-2 ring-red-100 bg-red-50"
                   />
                   <div>
                     <h5 className="font-bold text-gray-900 text-sm">{t.name}</h5>

@@ -89,7 +89,7 @@ export default function TestimonialsList() {
         <div className="grid gap-4">
           {items.map((t) => (
             <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-3 lg:p-4 shadow-sm flex items-center gap-3 lg:gap-4">
-              <img src={t.avatar} alt={t.name} className="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover ring-2 ring-red-100 flex-shrink-0" />
+              <img src={t.avatar && t.avatar.startsWith('http') ? t.avatar : `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=dc2626&color=fff`} alt={t.name} className="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover ring-2 ring-red-100 bg-red-50 flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 lg:gap-2 mb-0.5 lg:mb-1">
                   <h3 className="font-bold text-gray-900 text-sm lg:text-base">{t.name}</h3>
