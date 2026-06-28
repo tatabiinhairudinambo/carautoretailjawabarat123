@@ -35,7 +35,7 @@ export default function AdminLayout() {
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar onLogout={handleLogout} />
       <div className="flex-1 lg:ml-64">
-        <header className="bg-white border-b border-gray-200 pl-14 lg:pl-6 pr-4 py-3 lg:py-4 flex items-center justify-between sticky top-0 z-10">
+        <header className="bg-white border-b border-gray-200 pl-14 lg:pl-6 pr-4 py-3 lg:py-4 flex items-center justify-between sticky top-0 z-50">
           <div>
             <h1 className="text-base lg:text-lg font-bold text-gray-900">Admin Panel</h1>
             <p className="text-[10px] lg:text-xs text-gray-500 truncate max-w-[160px] lg:max-w-none">{user.email}</p>

@@ -98,7 +98,7 @@ const CarCard = ({ car }: CarCardProps) => {
           onClick={handleWhatsApp}
           className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 group/btn"
         >
-          <span>Sewa Sekarang</span>
+          <span>Pesan Sekarang</span>
           <ArrowRight
             size={16}
             className="group-hover/btn:translate-x-1 transition-transform duration-300"
