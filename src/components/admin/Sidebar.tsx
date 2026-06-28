@@ -64,7 +64,7 @@ export default function Sidebar({ onLogout }: SidebarProps) {
       {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        className="fixed top-3 left-3 z-50 lg:hidden bg-gray-950 text-white p-2.5 rounded-xl shadow-lg hover:bg-gray-800 transition-all"
+        className="fixed top-3 left-3 z-[60] lg:hidden bg-gray-950 text-white p-2.5 rounded-xl shadow-lg hover:bg-gray-800 transition-all"
         aria-label="Toggle menu"
       >
         {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -77,7 +77,7 @@ export default function Sidebar({ onLogout }: SidebarProps) {
 
       {/* Mobile sidebar overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-[60] lg:hidden transition-all duration-300 ${
           mobileOpen ? 'visible' : 'invisible'
         }`}
       >
